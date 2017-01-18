@@ -52,8 +52,9 @@ const ReleaseCommits = React.createClass({
         <div className="release-group-header">
           <div className="row">
             <div className="col-sm-2 col-xs-2">{'SHA'}</div>
-            <div className="col-sm-7 col-xs-7">{'Message'}</div>
-            <div className="col-sm-3 col-xs-3 align-right">{'Date'}</div>
+            <div className="col-sm-5 col-xs-5">{'Message'}</div>
+            <div className="col-sm-3 col-xs-3 align-right actions">{'Date'}</div>
+            <div className="col-sm-2 col-xs-2 align-right actions">{'Author'}</div>
           </div>
         </div>
         <div className="release-list">
@@ -62,8 +63,9 @@ const ReleaseCommits = React.createClass({
             return (
               <div className="release release-artifact row" key={commit.id}>
                 <div className="col-sm-2 col-xs-2"><strong>{shortId}</strong></div>
-                <div className="col-sm-7 col-xs-7">{commit.message}</div>
+                <div className="col-sm-5 col-xs-5">{commit.message}</div>
                 <div className="col-sm-3 col-xs-3 align-right actions">{commit.dateCreated}</div>
+                <div className="col-sm-2 col-xs-2 align-right actions">{commit.author.name}</div>
               </div>
             );
           })}
